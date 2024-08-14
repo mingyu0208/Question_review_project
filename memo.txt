@@ -1,0 +1,11 @@
+(board) C:\Users\user\Desktop\BoardProject>flask shell
+Python 3.12.1 (tags/v3.12.1:2305ca5, Dec  7 2023, 22:03:25) [MSC v.1937 64 bit (AMD64)] on win32
+App: Board
+Instance: C:\Users\user\Desktop\BoardProject\instance
+>>> from Board import db
+>>> from Board.models import Question
+>>> from datetime import datetime
+>>> for x in range(300):
+...     q = Question(subject='테스트 데이터:[%03d]' % x, content='내용없음', create_date=datetime.now())
+...     db.session.add(q)
+...     db.session.commit()
